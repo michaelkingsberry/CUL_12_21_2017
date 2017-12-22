@@ -174,6 +174,15 @@ function determineFile(file, ext) {
 	console.log("File Type: " + file.type);
 	console.log("Last Modified Date: " + new Date(file.lastModified));
 	console.groupEnd();
+    
+	// List the information from the files
+	var listItem = '<p class="list-item">';
+	listItem += "File Name: " + file.name + "<br />";
+	listItem += "File Size: " + parseInt(file.size / 1024, 10) + "kb<br />";
+	listItem += "File Type: " + file.type + "<br />";
+	listItem += "Last Modified Date: " + new Date(file.lastModified) + "<br />";
+	listItem += "</p><hr />";
+	document.getElementById('info-results').innerHTML += listItem;
 
 	// We can't depend upon the file.type (Chrome, IE, and Safari break)
 	// Based upon the extension of the file, display its contents in specific locations
@@ -215,11 +224,15 @@ function determineFile(file, ext) {
 // Here we empty the text areas
 function clearBoxes() {
 	if (confirm("This will clear the URL, index, and transcript areas.") == true) {
-		$("#index").val("");
-  	$("#transcript").val("");
-		$("#media-url-upload").val("");
-		$("#url-upload").val("");
-		$("#errorBar").hide();
+        location.reload(true); 
+        //		$("#index").val("");
+//  	$("#transcript").val("");
+//		$("#media-url-upload").val("");
+//		$("#url-upload").val("");
+//		$("#errorBar").hide();
+//        $("#info-results").hide();
+//        $("#audio").hide();
+//        $("#video").hide();
 	}
 }
 
