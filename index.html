@@ -91,13 +91,18 @@
 						</div>
 
 						<div id="input-area">
-							<button class="btn btn-info pull-right" onclick="clearBoxes()">Start New</button>
+							<!-- <button class="btn btn-info pull-right" onclick="clearBoxes()">Start New Project</button>  -->
+                            <!-- <button class="btn btn-info pull-right margin: -2px 0" onclick="clearBoxes()">Clear Documents</button>  -->
+                            <button type="button" class="btn btn-raised btn-primary pull-right" onclick="clearBoxes()">Clear Documents</button>
+                            <button type="button" class="btn btn-raised btn-secondary pull-right"onclick="reload()">New Project</button>
 							<h2>Index Document</h2>
 							<textarea id="index" rows="15" cols="115"></textarea>
 							<h2>Transcript</h2>
 							<textarea id="transcript" rows="25" cols="115"></textarea>
 						</div>
 
+
+                        
 						<div id="finish-area">
 							<p>These buttons do not currently function.</p>
 							<div class="col-md-6">

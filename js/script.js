@@ -222,19 +222,26 @@ function determineFile(file, ext) {
 }
 
 // Here we empty the text areas
-function clearBoxes() {
-	if (confirm("This will clear the URL, index, and transcript areas.") == true) {
+function reload() {
+	if (confirm("This will start a new project and reload the page.") == true) {
         location.reload(true); 
-        //		$("#index").val("");
-//  	$("#transcript").val("");
-//		$("#media-url-upload").val("");
-//		$("#url-upload").val("");
-//		$("#errorBar").hide();
-//        $("#info-results").hide();
-//        $("#audio").hide();
-//        $("#video").hide();
 	}
 }
+
+// Here we empty the text areas
+function clearBoxes() {
+	if (confirm("This will clear the URL, index, and transcript areas.") == true) {
+        $("#index").val("");
+  	    $("#transcript").val("");
+		$("#media-url-upload").val("");
+		$("#url-upload").val("");
+		$("#errorBar").hide();
+        $("#language").empty();
+        $("#info-results").empty();
+
+	}
+}
+
 
 function uploadFile(sender) {
 	// Grab the files from the user's selection
